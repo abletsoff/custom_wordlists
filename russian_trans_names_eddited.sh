@@ -5,6 +5,7 @@ for name in ${names[@]}; do
     if [[ $(echo "$name" | grep -P 'j$') != '' ]]; then
         if [[ $(echo "$name" | grep -P 'ij$') != '' ]]; then
             echo "$name" | sed 's/j$//g' >> "$filename.tmp"
+            echo "$name" | sed 's/ij$/y/g' >> "$filename.tmp"
         fi
 
         echo "$name" | sed 's/j$/y/g' >> "$filename.tmp"
